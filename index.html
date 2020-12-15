@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<title>Amanda Steigman</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>Amanda</b> Steigman</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#skills" class="w3-bar-item w3-button">Skills</a>
+      <a href="#education" class="w3-bar-item w3-button">Education</a>
+      <a href="#experience" class="w3-bar-item w3-button">Experience</a>
+      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+    </div>
+  </div>
+</div>
+<style>
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.column2 {
+  float: left;
+  width: 45%;
+  padding: 30px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row {
+  margin: auto;
+}
+
+.panel-group {
+  margin: auto;
+}
+
+.panel-heading {
+  padding: 30px;
+}
+
+/*timeline*/
+* {
+  box-sizing: border-box;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 30%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 30%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: lightblue;
+  border: 3px solid black;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the right */
+.right {
+  left: 10%;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid black;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent black transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  border-style: solid;
+  border-color: : black;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Full-width containers */
+  .container {
+    width: 60%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+/* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid black;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent black transparent transparent;
+  }
+
+/* Make sure all circles are at the same spot */
+  .right::after {
+    left: 15px;
+  }
+
+}
+
+</style>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span class="w3-hide-small w3-text-light-grey">Architects</span></h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+    <div class="row">
+  <div class="column">
+    <p><img src="amanda.png" width="200" height="200"><br>
+    <img src="columbia.png" height="85"><br>
+    <img src="uchicago.png" height="75"><br></p>
+    <p>Connect with me:  <a href="mailto:amanda.steigman@columbia.edu"><img src="email.png" height="20"></a>
+    <a href="http://www.linkedin.com/in/amandasteigman"><img src="linkedin.png"  height="20"></a>
+    <a href="https://github.com/asteigman"><img src="github.png" height="20"></a><br>
+    </p>
+  </div>
+  <div class="column">
+    <p><h4>Hi, I'm Amanda.</h4> <br>  I received my MS in Data Science in December 2020 from Columbia University, where I worked on research projects for
+          professors in Management, Operations Research, and Biomedical Informatics. While completing my Master's,
+          I also spent a summer at American Express working on their Finance Decision Science team to forecast card fee revenue for small businesses in the US.
+          Prior to that, I was a quantitative analyst and Data Science Fellow at Abt Associates, a policy research and evaluation firm, where I
+          contributed to projects related to workforce development, housing, and education.
+<br><br>
+          I graduated in June 2017 from the University of Chicago with a BA in Political Science and a minor in Statistics.
+          While I have worked with data related to a variety of fields, the common theme among the projects that interest me most
+          are simply ones where I get to work on interesting problems and affect positive social change. My primary research interests are, from a Data Science perspective,
+          Natural Language Processing, and, from a domain perspective, organizational behavior.
+        </p>
+  </div>
+</div>
+
+  </div>
+
+  </div>
+
+  <!-- Skills Section -->
+  <div class="w3-container w3-padding-32" id="skills">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Skills</h3>
+    <div class="w3-row-padding w3-grayscale">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <br>
+        <img src="python.png" width=50 height=50>
+        <h3>Python</h3>
+        <p class="w3-opacity">Pandas, NumPy, Scikit Learn, NLTK, gensim, matplotlib, plotly, TensorFlow, Keras, PySpark</p>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <br>
+        <img src="r.png" width=50 height=50>
+        <h3>R</h3>
+        <p class="w3-opacity">caret, MLtools, tidyverse, ggplot2, plotly, stats, d3, nnet, tm, glm, glmnet</p>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <br>
+        <img src="sql2.jpg" width=50 height=50>
+        <h3>SQL</h3>
+        <p class="w3-opacity">PostgreSQL, MySQL</p>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <br>
+        <img src="ml.png" width=50 height=50>
+        <h3>Statistics & Modeling</h3>
+        <p class="w3-opacity">Linear Regression, Logistic Regression, Regularized Regression, Clustering, Matrix Factorization, Tree-Based Methods, Language Models, Recommender Systems and Collaborative Filtering, Deep Learning and Neural Networks</p>
+      </div>
+  </div>
+
+  <!-- Education Section -->
+  <div class="w3-container w3-padding-32" id="education">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Education</h3>
+    <p><b> Click to expand: </b></p>
+    <div class="panel-group" id="accordion" style="width:50%">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title" style="text-align:center">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Columbia University</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body"><ul class="list-group">
+        <li class="list-group-item"><i>M.S. in Data Science: December 2020</i></li>
+        <li class="list-group-item">Course Assistant: Natural Language Processing, Fall 2020</li><br>
+        <b>Relevant Courses</b><ul><br>
+        <li class="list-group-item">Algorithms</li>
+        <li class="list-group-item">Capstone Research Project (Deep Learning)</li>
+        <li class="list-group-item">Data Visualization</li>
+        <li class="list-group-item">Databases</li>
+        <li class="list-group-item">Mathematical Machine Learning</li>
+        <li class="list-group-item">Machine Learning for Finance</li>
+        <li class="list-group-item">Natural Language Processing</li>
+        <li class="list-group-item">Personalization</li>
+        <li class="list-group-item">Probability & Statistics for Data Science</li>
+        <li class="list-group-item">Statistical Inference & Modeling</li></ul>
+      </ul></div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title" style="text-align:center">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        The University of Chicago</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body"><ul class="list-group">
+        <li class="list-group-item"><i>B.A. in Political Science, minor in Statistics: June 2017</i></li>
+        <li class="list-group-item">Honors: Phi Beta Kappa Society, Dean's List</li><br>
+        <b>Relevant Courses</b><ul><br>
+        <li class="list-group-item">Analysis of Categorical Data</li>
+        <li class="list-group-item">Applied Regression Analysis</li>
+        <li class="list-group-item">Linear Models & Experimental Design</li>
+        <li class="list-group-item">Practice of Social Science Research</li>
+          <li class="list-group-item">Statistical Methods & Applications</li></ul>
+      </ul></div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <!-- Experience Section -->
+  <div class="w3-container w3-padding-32" id="experience">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Experience</h3>
+    <p><b>Click to expand: </b><p>
+            <div class="panel-group" id="accordion2">
+      <div class="row">
+      <div class="column2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title" style="text-align:center">
+          <a data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
+          <img src="amex.png" width="200" height="200"><br><br>Internship</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ul class="list-group">
+            <li class="list-group-item"><b>Graduate Data Science Intern</b></li>
+            <li class="list-group-item"><i>July 2020 - August 2020</i></li>
+            <li class="list-group-item">Forecast US small business card fee revenue through product-level trends as well as cardmember account
+  information to inform profit and loss business strategy using gradient boosting to achieve 99% accuracy.</li>
+          </ul></div>
+        </div>
+        </div>
+    </div>
+  <div class="column2">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title" style="text-align:center">
+      <a data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
+      <img src="abt.png" width="200" height="200"><br><br>Full-Time</a>
+    </h4>
+  </div>
+  <div id="collapse4" class="panel-collapse collapse">
+    <div class="panel-body">
+      <ul class="list-group">
+        <li class="list-group-item"><b>Associate Programmer Analyst, Data Science Fellow</b></li>
+        <li class="list-group-item"><i>December 2018 - July 2020</i></li>
+        <li class="list-group-item">Selected Project: Cross-validated two models (Lasso logistic regression, random forest)
+           using Python to predict employment of persons participating in workforce development program to identify important features
+           of those who successfully gained employment after exiting the program.  </li>
+<li class="list-group-item"><b>Research Assistant</b></li>
+<li class="list-group-item"><i>October 2017 - December 2018</i></li>
+<li class="list-group-item">Selected Project: Performed topic modeling using latent Dirichlet allocation (LDA) in R to select citations for
+a repository relevant to post-secondary education outcomes for What Works Clearinghouse. Using this technique, narrowed the citations the team had pulled from
+over 50,000 to under 2,000 and highlighted the usefulness of Natural Language Processing in this sort of work - previously, these citations' abstracts were vetted one by one by a team of analysts
+with domain knowledge. </li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="column2">
+<div class="panel panel-default">
+<div class="panel-heading">
+  <h4 class="panel-title" style="text-align:center">
+    <a data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
+    <img src="columbialogo.png" width="200" height="200"><br><br>Research</a>
+  </h4>
+</div>
+<div id="collapse5" class="panel-collapse collapse">
+  <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item"><b>Research Assistant for Professor Chunhua Weng, Biomedical Informatics</b></li>
+      <li class="list-group-item"><i>September 2020 - December 2020</i></li>
+      <li class="list-group-item">Used abstractive and extractive summarization to create a pipeline and user interface that automatically generates summaries from abstracts of Randomized Controlled Trials (RCTs)
+         that are digestible to the average reader to combat the issues of [1] information overload (PubMed, a major biomedical literature database, currently has over twelve million citations)
+          and [2] poor health literacy (the American Medical Association recommends that materials geared toward patients should not be above the reading level of a 5th grader).</li>
+<li class="list-group-item"><b>Research Assistant for Professor Sandra Matz, Management</b></li>
+<li class="list-group-item"><i>January 2020 - October 2020</i></li>
+<li class="list-group-item">Researched usefulness of digital footprints for deducing individual behaviors and traits. Built models using feature engineering of text data, matrix factorization (Singular Value Decomposition), and nested cross-validated
+   Lasso logistic regression to predict entrepreneurship from Facebook likes and statuses.</li>
+<li class="list-group-item"><b>Research Assistant for Professor Ton Dieker, Operations Research</b></li>
+<li class="list-group-item"><i>July 2020 - August 2020</i></li>
+<li class="list-group-item">Investigated election systems in New York City with regard to variations in operational aspects
+   of voting technologies, budgets, turnout, and, more broadly, fairness. Simulated data under various allocation scenarios and poll site arrival
+    disitributions using JaamSim with the goal of reducing wait time at the polls. </li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+<div class="column2">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title" style="text-align:center">
+<a data-toggle="collapse" data-parent="#accordion2" href="#collapse6">
+<img src="TEALS.png" width="200" height="200"><br><br>Volunteering</a>
+</h4>
+</div>
+<div id="collapse6" class="panel-collapse collapse">
+<div class="panel-body"><ul class="list-group">
+  <a href="https://www.microsoft.com/en-us/teals">TEALS</a> (Technology Education & Literacy in Schools) is a Microsoft Philanthropies program that connects
+   classroom teachers with tech-industry volunteers, through remote and in classroom learning, to create sustainable CS and technology education programs.<br><br>
+  <li class="list-group-item"><b>Teacher, Introduction to Computer Science</b></li>
+  <li class="list-group-item"><i>June 2020 - Present</i></li>
+  <li class="list-group-item">Co-teach computer science to class of high school students in Buffalo, NY. Plan and teach weekly lesson, provide lab support, hold office hours,
+  and grade assignments. </li>
+<li class="list-group-item"><b>Teaching Assistant, Introduction to Computer Science</b></li>
+<li class="list-group-item"><i>June 2019 - June 2020</i></li>
+<li class="list-group-item">Provided lab support to class of 11th grade students in South Bronx, NY. </li>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
+  </div>
+  <div class="timeline">
+    <div class="container right">
+      <div class="content">
+        <h4>MovieLens Hybrid Recommender Sysyem</h4>
+        <b>Fall 2020</b><br>
+        <p>Created end-to-end framework for producing a Top 10 list of movies for individual users using the MovieLens dataset by building a hybrid recommender system that utilizes a parallel ensemble switching method.
+        Scraped movie data from Wikipedia to construct a content-based algorithm that uses tree-based Approximate Nearest Neighbors (ANN) to find similar movies for users. After comparing several hybrid systems across novelty,
+        precision, and recall, our team's final product was a hybrid system using item-based collaborative filtering and autoencoders to make recommendations.</p>
+      </div>
+    </div>
+    <br>
+    <div class="container right">
+      <div class="content">
+        <h4><a href="https://github.com/asteigman/sb-covid">Are Small Business Closures Curbing the Spread of COVID-19?</a></h4>
+        <b>Spring 2020</b><br>
+        <p>Combined data from a local business scheduling tool with coronavirus case data and
+          Census data to perform an iterative analysis on the effects of small business closures on coronavirus case rates in cities by
+          [1] attempting to cluster cities based on case rates on each day and
+          [2] regressing lagged case rates on small business closures on those results.
+          Selected as a finalist for Columbia Data Science Institute’s Center for Health Analytics COVID-19 Data Challenge.</p>
+      </div>
+    </div>
+    <br>
+    <div class="container right">
+      <div class="content">
+        <h4><a href="https://github.com/asteigman/EDAV-Final-Project">Exploring Prescription Painkiller Use and Abuse</a></h4>
+        <b>Fall 2019</b><br>
+        <p>Designed research questions related to factors correlated with opioid misuse and performed exploratory data analysis
+          as well as created visualizations to answer these questions using R and d3.</p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>	&copy; Amanda Steigman 2020</p>
+</footer>
+
+</body>
+</html>
