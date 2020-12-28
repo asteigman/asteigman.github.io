@@ -7,14 +7,226 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+/*  $(document).ready(function(){
+  /* $sections includes all of the container divs that relate to menu items.*/
+/*  var $sections = $('.w3-container');
+
+  /*The user scrolls*/
+  /*$(window).scroll(function(){
+
+    /*currentScroll is the number of pixels the window has been scrolled*/
+  /*  var currentScroll = $(this).scrollTop();
+
+    /* $currentSection is somewhere to place the section we must be looking at*/
+    /*var $currentSection
+
+    /* We check the position of each of the divs compared to the windows scroll positon*/
+    /*$sections.each(function(){
+      /* divPosition is the position down the page in px of the current section we are testing*/
+    /*  var divPosition = $(this).offset().top;
+
+      /*If the divPosition is less the the currentScroll position the div we are testing has moved above the window edge.
+      the -1 is so that it includes the div 1px before the div leave the top of the window.*/
+    /*  if( divPosition - 1 < currentScroll ){
+        /*We have either read the section or are currently reading the section so we'll call it our current section*/
+      /*  $currentSection = $(this);
+
+        /*If the next div has also been read or we are currently reading it we will overwrite this value again.
+         This will leave us with the LAST div that passed.*/
+      }
+
+      /*This is the bit of code that uses the currentSection as its source of ID*/
+    /*  var id = $currentSection.attr('id');
+   	 $('a').removeClass('active');
+   	 $("[href=#"+id+"]").addClass('active');
+
+    })
+
+  });
+});*/
+
+
+</script>
+
 <body>
+  <style>
+/*nav bar chars*/
+  .active{
+	color: lightblue;
+  background-color:#ccc;
+}
+
+/*  w3-button:hover{color:#000!important;background-color:#ccc!important}*/
+
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
+
+  .column2 {
+    float: left;
+    width: 45%;
+    padding: 30px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .row {
+    margin: auto;
+  }
+
+  /*center accordions and add padding to boxes, and colors*/
+  .panel-group {
+    margin: auto;
+  }
+
+  .panel-heading {
+    padding: 30px;
+  }
+
+  .panel-default > .panel-heading {
+      border: 4px solid lightblue;
+  }
+
+  .panel-default > .panel-collapse {
+      border: 2px solid lightblue;
+  }
+
+  /*.list-group {
+    border: 1px solid lightblue;
+  }*/
+
+  .list-group-item {
+    border: 1px solid black;
+  }
+
+  /*timeline*/
+  * {
+    box-sizing: border-box;
+  }
+
+  /* The actual timeline (the vertical ruler) */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: black;
+    top: 0;
+    bottom: 0;
+    left: 30%;
+    margin-left: -3px;
+  }
+
+  /* Container around content */
+  .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 30%;
+  }
+
+  /* The circles on the timeline */
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: lightblue;
+    border: 3px solid black;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  /* Place the container to the right */
+  .right {
+    left: 10%;
+  }
+
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid black;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent black transparent transparent;
+  }
+
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color: white;
+    border-style: solid;
+    border-color: : black;
+    position: relative;
+    border-radius: 6px;
+  }
+
+  /* Full-width containers */
+    .container {
+      width: 60%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+
+  /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+      left: 60px;
+      border: medium solid black;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent black transparent transparent;
+    }
+
+  /* Make sure all circles are at the same spot */
+    .right::after {
+      left: 15px;
+    }
+
+  }
+
+  /*right and left alignment for box accordions*/
+  .acc-left {
+    text-align: left; width:45%; display: inline-block;
+  }
+
+  .acc-right {
+    float: right; width:45; display: inline-block;
+  }
+
+
+  </style>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
     <a href="#home" class="w3-bar-item w3-button"><b>Amanda</b> Steigman</a>
     <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
+    <div class="w3-right w3-hide-small" id="navigation">
       <a href="#about" class="w3-bar-item w3-button">About</a>
       <a href="#skills" class="w3-bar-item w3-button">Skills</a>
       <a href="#education" class="w3-bar-item w3-button">Education</a>
@@ -23,174 +235,11 @@
     </div>
   </div>
 </div>
-<style>
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-}
 
-.column2 {
-  float: left;
-  width: 45%;
-  padding: 30px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.row {
-  margin: auto;
-}
-
-/*center accordions and add padding to boxes, and colors*/
-.panel-group {
-  margin: auto;
-}
-
-.panel-heading {
-  padding: 30px;
-}
-
-.panel-default > .panel-heading {
-    border: 4px solid lightblue;
-}
-
-.panel-default > .panel-collapse {
-    border: 2px solid lightblue;
-}
-
-/*.list-group {
-  border: 1px solid lightblue;
-}*/
-
-.list-group-item {
-  border: 1px solid black;
-}
-
-/*timeline*/
-* {
-  box-sizing: border-box;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: black;
-  top: 0;
-  bottom: 0;
-  left: 30%;
-  margin-left: -3px;
-}
-
-/* Container around content */
-.container {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 30%;
-}
-
-/* The circles on the timeline */
-.container::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: lightblue;
-  border: 3px solid black;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-/* Place the container to the right */
-.right {
-  left: 10%;
-}
-
-/* Add arrows to the right container (pointing left) */
-.right::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  left: 30px;
-  border: medium solid black;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent black transparent transparent;
-}
-
-/* Fix the circle for containers on the right side */
-.right::after {
-  left: -16px;
-}
-
-/* The actual content */
-.content {
-  padding: 20px 30px;
-  background-color: white;
-  border-style: solid;
-  border-color: : black;
-  position: relative;
-  border-radius: 6px;
-}
-
-/* Full-width containers */
-  .container {
-    width: 60%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
-
-/* Make sure that all arrows are pointing leftwards */
-  .container::before {
-    left: 60px;
-    border: medium solid black;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent black transparent transparent;
-  }
-
-/* Make sure all circles are at the same spot */
-  .right::after {
-    left: 15px;
-  }
-
-}
-
-/*right and left alignment for box accordions*/
-.acc-left {
-  text-align: left; width:45%; display: inline-block;
-}
-
-.acc-right {
-  float: right; width:45; display: inline-block;
-}
-
-</style>
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">
-  <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span class="w3-hide-small w3-text-light-grey">Architects</span></h1>
-  </div>
+
 </header>
 
 <!-- Page content -->
@@ -226,7 +275,6 @@
 
   </div>
 
-  </div>
 
   <!-- Skills Section -->
   <div class="w3-container w3-padding-32" id="skills">
@@ -236,7 +284,7 @@
         <br>
         <img src="python.png" width=50 height=50>
         <h3>Python</h3>
-        <p class="w3-opacity">Pandas, NumPy, Scikit Learn, NLTK, gensim, matplotlib, plotly, TensorFlow, Keras, PySpark</p>
+        <p class="w3-opacity">Pandas, NumPy, Scikit Learn, NLTK, gensim, matplotlib, plotly, TensorFlow, Keras, PySpark, seaborn</p>
       </div>
       <div class="w3-col l3 m6 w3-margin-bottom">
         <br>
@@ -257,6 +305,7 @@
         <p class="w3-opacity">Linear Regression, Logistic Regression, Regularized Regression, Clustering, Matrix Factorization, Tree-Based Methods, Language Models, Recommender Systems and Collaborative Filtering, Deep Learning and Neural Networks</p>
       </div>
   </div>
+</div>
 
   <!-- Education Section -->
   <div class="w3-container w3-padding-32" id="education">
@@ -424,7 +473,6 @@ with domain knowledge. </li>
   <!-- Project Section -->
   <div class="w3-container w3-padding-32" id="projects">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
-  </div>
   <div class="timeline">
     <div class="container right">
       <div class="content">
@@ -457,6 +505,7 @@ with domain knowledge. </li>
       </div>
     </div>
   </div>
+</div>
 
 
 <!-- End page content -->
